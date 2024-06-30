@@ -18,11 +18,6 @@ const prisma = new PrismaClient();
 server.post("/api/user", async (req, res) => {
     const { username, email, password } = req.body;
 
-    console.log("Request payload:", req.body)
-
-    if (!username || !email || !password) {
-        return res.status(400).json({ error: "Missing required fields" });
-    }
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
