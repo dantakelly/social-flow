@@ -20,6 +20,10 @@ server.post("/api/user", async (req, res) => {
 
     console.log("Request payload:", req.body)
 
+    if (!username || !email || !password) {
+        return res.status(400).json({ error: "Missing required fields" });
+    }
+
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = await prisma.user.create({
