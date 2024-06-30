@@ -28,7 +28,7 @@ function Login() {
       event.preventDefault();
 
       try { 
-        const response = await fetch('https://social-flow-server.vercel.app/', { 
+        const response = await fetch('https://social-flow-server.vercel.app/api/login', { 
           method: 'POST', 
           headers: { 
             'Content-Type': 'application/json', 
