@@ -1,0 +1,1 @@
+This is the public folder for my social-flow next app -- empty for now. 

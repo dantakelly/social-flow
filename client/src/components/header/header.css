@@ -1,0 +1,117 @@
+.header-section{
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.header-logo h2{
+    font-style: italic;
+}
+
+.header-section ul{
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    list-style-type: none;
+
+    width: fit-content;
+    height: fit-content;
+    /* border: solid black 1px; */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px #cdcddc;
+    cursor: pointer;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.login-header, .signup-header, .about-header{
+    transition: all 0.4s ease;
+}
+
+.login-header:hover, .signup-header:hover,
+.about-header:hover{
+    font-weight: bold;
+}
+
+.header-responsive{
+    display: none;
+}
+
+.show-responsive-header{
+    display: none;
+}
+
+/* Media Query Section */
+@media screen and (min-width: 100px) and (max-width: 1199px) {
+   .header-section{
+    display: none;
+   }
+
+   .show-responsive-header{
+    display: block;
+   }
+
+   .show-responsive-header img{
+    width: 25px;
+    height: 25px;
+    margin-top: 15px;
+    margin-right: 12px;
+    position: absolute;
+    right: 0%;
+    cursor: pointer;
+   }
+
+   .header-responsive{
+    display: none;
+   }
+
+   .header-responsive{
+    position: fixed;
+    right: 0%;
+    width: 60%;
+    height: 100%;
+    /* background-color: #FFFFFF; */
+    box-shadow: 0px 0px 10px 0px #cdcddc;
+   }
+
+   .responive-head-contents{
+    margin-top: 25%;
+    padding-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+   }
+
+   .header-logo{
+    /* display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; */
+   }
+
+   .responive-head-contents ul, .header-logo{ 
+    list-style-type: none;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+   }
+
+   .close-nav{
+    width: 25px;
+    height: 25px;
+    margin-top: 15px;
+    margin-left: 12px;
+    cursor: pointer;
+   }
+}
+/* Media Query Section Closed */

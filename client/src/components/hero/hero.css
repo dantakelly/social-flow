@@ -1,0 +1,147 @@
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    height: 100vh;
+}
+
+.first-left-hero{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.first-left-hero h1{
+    font-size: 50px;
+}
+
+.first-left-hero p{ 
+    font-weight: 470;
+}
+
+.buttons-hero{
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons-hero button{
+    width: 100px;
+    height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: solid black;
+}
+
+.buttons-hero button:hover{
+    background-color: #EFEFFE;
+    border: solid #651FE0;
+}
+
+.box-to-fit-img-hero{
+    width: 600px;
+    height: 420px;
+    border: solid 0px #651FE0;
+    border-radius: 10px;
+    background-image: url(./MESSAGE\ APP\ IMG\ Hero.png);
+    background-size: cover;
+    box-shadow: 0px 0px 10px 0px #651FE0;
+}
+
+
+
+/* Media Query Section */
+@media screen and (max-width: 300px) {
+
+    br{
+        display: none;
+    }
+
+    .hero-container{
+        padding: 20px 20px;
+
+        height: 48em;
+    }
+
+    .buttons-hero button{
+        width: 90px;
+        height: 35px;
+    }
+
+    .first-left-hero h1{
+        font-size: 28px;
+    }
+
+    .box-to-fit-img-hero{
+        width: 260px;
+        height: 300px;
+        background-size: contain;
+    }
+}
+
+/* Media for screens 301 to 500 */
+@media screen and (min-width: 301px) and (max-width: 500px) {
+
+    br{
+        display: none;
+    }
+
+    .hero-container{
+        padding: 0px 20px;
+
+        height: 48em;
+    }
+
+    .buttons-hero button{
+        width: 100px;
+        height: 40px;
+    }
+
+    .first-left-hero h1{
+        font-size: 30px;
+    }
+
+    .box-to-fit-img-hero{
+        width: 330px;
+        height: 300px;
+        background-size: contain;
+    }
+}
+/* closed */
+
+
+/* Media for screens 501 to 700 */
+@media screen and (min-width: 501px) and (max-width: 700px) {
+    br{
+        display: none;
+    }
+
+    .hero-container{
+        padding: 0px 20px;
+
+        height: 110vh;
+    }
+
+    .buttons-hero button{
+        width: 100px;
+        height: 40px;
+    }
+
+    .first-left-hero h1{
+        font-size: 38px;
+    }
+
+    .box-to-fit-img-hero{
+        width: 430px;
+        height: 400px;
+        background-size: contain;
+    }
+}
+/* closed */
+
+/* Media Query Section Closed */
