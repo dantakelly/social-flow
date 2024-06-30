@@ -18,6 +18,8 @@ const prisma = new PrismaClient();
 server.post("/api/user", async (req, res) => {
     const { username, email, password } = req.body;
 
+    console.log("Request payload:", req.body)
+
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = await prisma.user.create({
