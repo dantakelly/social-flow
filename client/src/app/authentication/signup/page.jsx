@@ -28,7 +28,7 @@ function Signup() {
         }
 
         try { 
-            const response = await fetch('https://social-flow-server.vercel.app/api/user', { 
+            const response = await fetch('https://social-flow-server.vercel.app/', { 
                 method: 'POST', 
                 headers: { 
                     'Content-Type': 'application/json',
