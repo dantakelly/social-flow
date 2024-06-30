@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "next",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "next/dist"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": ".*",
+        "dest": "next/dist/index.html"
+      }
+    ]
+  }
