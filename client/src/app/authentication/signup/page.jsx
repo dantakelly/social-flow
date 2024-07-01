@@ -109,7 +109,7 @@ function Signup() {
                         />
 
                         {error && <p style={{ color: 'red' }}>{error}</p>}
-                        <button onSubmit={handleRegister} type="submit">Create Account</button>
+                        <button type="submit">Create Account</button>
                     </form>
                     <div className="termsANDagreements-auth">
                         <p>By continuing, you indicate that you read and agreed to the Terms of Use</p>
