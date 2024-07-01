@@ -10,7 +10,7 @@ const server = express();
 const PORT = process.env.PORT || 3001; // Use process.env.PORT for Vercel compatibility
 dotenv.config();
 server.use(cors({
-    origin: 'https://social-flow.vercel.app'
+    origin: 'https://social-flow.vercel.app/authentication/signup'
 }));
 server.use(express.json());
 const prisma = new PrismaClient();
