@@ -35,6 +35,7 @@ function Signup() {
                 }, 
                 body: JSON.stringify({ username, email, password })
             });
+            console.log("error here:", {response})
 
             if (!response.ok) { 
                 throw new Error('Failed to register');
