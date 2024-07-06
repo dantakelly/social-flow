@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import Cookies from 'js-cookie';
+import { useEffect } from "react";
 
 import googleLogo from "./assets/google 1.svg";
 import facebookLogo from "./assets/facebook 1.svg";
@@ -14,6 +16,7 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState(null);
+    const [rememberMe, setRememberMe] = useState(false);
     
     const router = useRouter()
     const pathname = usePathname()
@@ -22,13 +25,14 @@ function Signup() {
     const handleRegister = async (event) => { 
         event.preventDefault();
 
+
         if (password !== confirmPassword) { 
             setError("Passwords do not match");
             return;
         }
 
         try { 
-            const response = await fetch('https://social-flow-server.vercel.app/api/user', { 
+            const response = await fetch('http://localhost:3001/api/user', { 
                 method: 'POST', 
                 headers: { 
                     'Content-Type': 'application/json',
@@ -43,7 +47,15 @@ function Signup() {
 
             const data = await response.json(); 
             console.log('Registration successful', data);
+
+             // setting up a token cookie from js Cookie for middleware & logout functionality
+             Cookies.set("authToken", data.token, {
+                secure: true, 
+                sameSite: "strict", 
+              });
+            // 
             router.push('/dashboard/home')
+
 
         } catch (error) { 
             setError(error.message);

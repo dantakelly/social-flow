@@ -9,6 +9,7 @@ import Switch from '@mui/material/Switch';
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+import Cookies from 'js-cookie';
 
 import googleLogo from "./assets/google 1.svg"
 import facebookLogo from "./assets/facebook 1.svg"
@@ -27,8 +28,9 @@ function Login() {
      const handleLogin = async (event) => { 
       event.preventDefault();
 
+
       try { 
-        const response = await fetch('https://social-flow-server.vercel.app/api/login', { 
+        const response = await fetch('http://localhost:3001/api/login', { 
           method: 'POST', 
           headers: { 
             'Content-Type': 'application/json', 
@@ -46,10 +48,20 @@ function Login() {
 
         if (!response.ok) { 
             throw new Error('Failed to login');
-        }
-  
+        } 
+        const data = await response.json();
+        console.log('login successful', data);
+
+      // Cokkies for middleware and logout functionality
+      // Set authentication token as a cookie
+        Cookies.set("authToken", data.token, {
+          secure: true, 
+          sameSite: "strict",
+        });
+      // 
         router.push('/dashboard/home')
-  
+
+        
       } catch (error) { 
         setError(error.message)
       }

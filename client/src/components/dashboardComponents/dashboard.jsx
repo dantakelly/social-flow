@@ -71,7 +71,7 @@ const Dashboard = () => {
                             alt=""
                         /> </Link>
 
-                        <Link href="/"> <Image 
+                        <Link href="/dashboard/settings"> <Image 
                             style={isNavActive(settingsnav) ? activeStyle : {}} 
                             onClick={() => handleNavClick(settingsnav)} 
                             src={settingsnav} 
